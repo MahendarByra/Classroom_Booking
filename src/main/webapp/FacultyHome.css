@@ -1,0 +1,91 @@
+/* CSS for Faculty home */
+@charset "UTF-8";
+button{
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus {
+  background-color: #07c;
+}
+
+button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+button:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+input{
+	font-size: 18px;
+	border-radius: 2px;
+}
+.error{
+	color: red;
+}
+.response{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	color: red;
+	padding: 15px;
+}
+#header{
+	background-color: black;
+}
+#heading{
+	color: red;
+	background-color : yellow;
+	font-size: 50px;
+	text-align: center;
+}
+#invitation{
+	color: blue;
+	text-align: center;
+}
+.Book{
+	margin: auto;
+	padding: 15px;
+	width: 500px;
+	margin-top: 100px;
+	border: 2px solid black;
+	background-color: rgb(255,182,193);
+	display: none;
+}
+.Free{
+	display: none;
+}
+.Search{
+	display: block;
+}
+.Mybookings{
+	display: none;
+}
+#redButton{
+	background-color: red;
+	color: black;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+		<div id = "store" style = "height: 150px; width: 500px; margin: auto;">
+				<h1>For store</h1>
+				<input type = "text" placeholder="enter image link"  id = "linkId" value=""><br><br>
+				<button type ="button" onclick="Store()">Store Image</button>
+				<div id="message">
+					
+				</div>
+		</div>
+		
+		<div id = "fetch" style = "height: 400px; width: 500px; margin: auto;">
+			
+			<h1>For fetch</h1>
+			<h2>Enter id</h2>
+			<input type="number" id="imageId" value="" onkeyup = "Fetch()">
+			
+			<div id = "image">
+			
+			</div>
+		
+		</div>
+		
+		
+		<script>
+			function Store(){
+				let x = document.getElementById("linkId").value;
+				if(x != ""){
+					const xhttp = new XMLHttpRequest();
+					
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+					    		document.getElementById("message").innerHTML = this.responseText;
+						}
+					 };
+					 xhttp.open("GET", "storeData.jsp?link="+x);
+					 xhttp.send();
+				}
+				document.getElementById("linkId").value = " ";	
+			}
+			
+			function Fetch(){
+				const xhttp = new XMLHttpRequest();
+				let x = document.getElementById("imageId").value;
+				if(x != ""){
+						if(x > 0 ){
+							xhttp.onreadystatechange  = function() {
+						  		if (this.readyState == 4 && this.status == 200) {
+						  	    	document.getElementById("image").innerHTML = this.responseText;  	    
+						  		}
+						  	};
+						}else{
+							document.getElementById("image").innerHTML = "please enter positive id"; 
+						}
+				}
+				 xhttp.open("GET", "getData.jsp?id="+x);
+				 xhttp.send();
+			
+			}
+		</script>
+</body>
+</html>
